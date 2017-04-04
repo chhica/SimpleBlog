@@ -11,7 +11,9 @@ namespace SimpleBlog.Controllers
         
         public ActionResult Login()
         {
-            return Content("Login!");
+            //return Content("Login!");
+            //instead of returning content Login, it will return a view
+            return View();
         }
     }
 }

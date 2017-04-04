@@ -10,11 +10,12 @@ namespace SimpleBlog.Controllers
     {
         public ActionResult Index()
         {
-            return Content("Hello, World!");
-                /*other possible choices
-                return Redirect
-                return File
-                return View*/
+            return View();
+            //return Content("<h1>Hey There!</h1>");
+            /*other possible choices
+            return Redirect
+            return File
+            return View*/
         }
     }
 }

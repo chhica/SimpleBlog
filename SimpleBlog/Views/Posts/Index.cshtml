@@ -1,0 +1,47 @@
+﻿
+@*it's moved completely to the _ViewStart view.
+    @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+@{ 
+    ViewBag.Title = "Posts";
+}
+
+@section Scripts
+{
+    <script>
+        alert("Hi");
+    </script>
+}
+<!DOCTYPE html>
+
+<!-- deleted because now they are in the layout.cshtml
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+-->
+<h1>Posts Index</h1>
+@if (true)
+{//Ways to tell razor we are working with html
+    <text>Hey there!</text>
+    <p>Hey you!</p>
+    //with single line
+    @:Hey hey hey  
+}
+
+<p>
+    @*from route config: login*@
+    <a href="@Url.RouteUrl("login")">Click here</a> to login! (with url.routeurl)
+</p>
+
+<p>
+    @Html.RouteLink("Click here", "login") to login! (with routelink)
+</p>
+<!-- deleted because now they are in the layout.cshtml
+</body>
+</html>
+    -->
