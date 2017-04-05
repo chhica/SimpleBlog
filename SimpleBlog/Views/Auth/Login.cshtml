@@ -1,6 +1,40 @@
-﻿@{
+﻿<!--To make it strongly typed:-->
+@model SimpleBlog.ViewModels.AuthLogin
+
+@{
     ViewBag.Title = "Login";
 }    
-<h1>Posts Index</h1>
 
-    
+
+<h1>Login</h1>
+
+<p>The value of test in our model is: @Model.Test</p>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+
+    <div>
+        @Html.LabelFor(x=> x.Username)
+        @Html.EditorFor(x=> x.Username)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Password)
+        @Html.EditorFor(x => x.Password)
+    </div>
+    <div>
+        <input type="submit" value="Login" />  
+    </div>
+}
+
+
+<!-- if it's not strongly typed, you can only match the form data 
+    with the view model class 
+<form method="post">
+    Username: <input type="text" name="Username"/>
+    <br>
+    Password:<input type="password" name="Password" />
+    <br>
+    <input type="submit" value="Login" />
+</form>    
+-->    
