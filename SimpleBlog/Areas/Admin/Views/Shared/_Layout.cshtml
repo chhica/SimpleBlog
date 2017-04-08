@@ -1,0 +1,48 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = null;
+}
+@helper SelectedTabClass(string tabName)
+{
+    if (tabName == ViewBag.SelectedTab)
+    {
+        @: active 
+    }
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SimpleBlog Admin</title>
+    <!--Add bundles-->
+    @Styles.Render("~/admin/styles") @*from bundleconfig*@
+</head>
+<body>
+    <div class="container">
+        <ul class="nav nav-pills">
+           
+            @*  instead of this line we will use the helper method
+                <li class="@(ViewBag.SelectedTab == "posts" ? "active" : "")">*@
+            <li class="@SelectedTabClass("posts")">
+                @*  action controller area
+                    it's picking the wrong overload action routevalues htmlattrib
+                    without the last parameter as a object new{}*@
+                @Html.ActionLink("Posts", "Index", "Posts", new { area = "admin" }, new { })
+            </li>
+            <li class="@SelectedTabClass("users")">
+                @Html.ActionLink("Users", "Index", "Users", new { area = "admin" }, new { })
+            </li>
+            <li class="pull-right">
+                @Html.RouteLink("Back to the website", "Home")
+            </li>
+        </ul>
+        @RenderBody()
+    </div>
+
+    <!--at the end of the body put the scripts-->
+    <h5>This is the admin.</h5>
+    @Scripts.Render("~/admin/scripts") @*from bundleconfig*@
+    @RenderSection("Scripts", false)
+</body>
+</html>

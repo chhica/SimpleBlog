@@ -10,13 +10,13 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title - SimpleBlog</title>
     <!--Add bundles-->
-    @Styles.Render("~/styles")
+    @Styles.Render("~/styles") @*from bundleconfig*@
 </head>
 <body>
     <header>
         <h1 style="color:blue;">
             <a href="@Url.RouteUrl("home")">Simple Blog</a>
-            <i class="glyphicon glyphicon-bell"></i>
+            <i class="glyphicon glyphicon-bell"></i> @*from bundleconfig*@
         </h1>
 
         @if(User.Identity.IsAuthenticated)
@@ -43,7 +43,7 @@
         <br>
         &copy; @DateTime.UtcNow.Year - Georgina
     </footer>
-    @Scripts.Render("~/scripts")
+    @Scripts.Render("~/scripts") @*from bundleconfig*@
     @RenderSection("Scripts",false)
 </body>
 </html>
