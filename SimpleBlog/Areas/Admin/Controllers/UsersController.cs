@@ -1,4 +1,7 @@
-﻿using SimpleBlog.Infrastructure;
+﻿using NHibernate.Linq;
+using SimpleBlog.Areas.Admin.ViewModels;
+using SimpleBlog.Infrastructure;
+using SimpleBlog.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +14,14 @@ namespace SimpleBlog.Areas.Admin.Controllers
     [SelectedTabAttribute("users")]
     public class UsersController : Controller
     {
+        [Authorize(Roles = "admin")]
+        [SelectedTab("users")]
         public ActionResult Index()
         {
-            return View();
+            return View(new UsersIndex
+            {
+                Users = Database.Session.Query<User>().ToList()
+            });
             //return Content("USERS!");
 
         }
