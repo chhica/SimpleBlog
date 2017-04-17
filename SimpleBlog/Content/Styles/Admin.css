@@ -2,3 +2,21 @@
 {
     background-color: thistle;
 }
+
+.field-validation-error  
+{ color: red;}
+
+.field-validation-valid
+{ display: none;}
+
+.field-validation-error
+{ 
+    border: 1px solid red;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{ 
+    font-weight: bold;
+    color: red;
+}

@@ -13,6 +13,9 @@ namespace SimpleBlog.Areas.Admin
                 "admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
+
+            //for example admin/users/edit/10
+            //"admin/{controller}/{action}/{id}"
         }
     }
 }

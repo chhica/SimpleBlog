@@ -26,6 +26,10 @@ namespace SimpleBlog
                 /*defaults:*/ new { controller = "Posts", action = "Index"},
                 /*namespaces[]:*/ namespaces
                 );
+
+            
+
+
             //routes.MapRoute(
             //    name: "Default",
             //    url: "{controller}/{action}/{id}",
